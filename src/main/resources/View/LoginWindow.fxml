@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+           fx:controller="Controller.LoginWindowController">
+    <children>
+        <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
+                    prefHeight="400.0" prefWidth="306.0" stylesheets="@CSSWhiteTheme.css">
+            <children>
+                <AnchorPane layoutY="30.0" prefHeight="370.0" prefWidth="500.0" style="-fx-background-color: #2D3D54;"
+                            styleClass="loginBackground" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="370.0" fitWidth="306.0" opacity="0.35" pickOnBounds="true"
+                                   preserveRatio="true">
+                            <image>
+                                <Image url="@../Images/ShoreLineBGLogin.png"/>
+                            </image>
+                        </ImageView>
+                        <JFXTextField fx:id="txtUsername" focusColor="#8faeea" labelFloat="true" layoutX="35.0"
+                                      layoutY="165.0" prefHeight="30.0" prefWidth="236.0" promptText="Username"
+                                      text="SLogin">
+                            <font>
+                                <Font name="Arial" size="12.0"/>
+                            </font>
+                        </JFXTextField>
+                        <JFXPasswordField fx:id="txtPassword" focusColor="#8faeea" labelFloat="true" layoutX="35.0"
+                                          layoutY="220.0" prefHeight="30.0" prefWidth="236.0" promptText="Password"
+                                          text="SPassword">
+                            <font>
+                                <Font name="Arial" size="12.0"/>
+                            </font>
+                        </JFXPasswordField>
+                        <JFXButton defaultButton="true" focusTraversable="false" layoutX="35.0" layoutY="284.0"
+                                   onAction="#login" prefHeight="38.0" prefWidth="236.0" ripplerFill="WHITE"
+                                   styleClass="loginButton" text="Log In">
+                            <font>
+                                <Font name="Arial Bold" size="14.0"/>
+                            </font>
+                        </JFXButton>
+                        <Pane layoutY="5.0" prefHeight="100.0" prefWidth="306.0"
+                              style="-fx-background-color: GHOSTWHITE;">
+                            <children>
+                                <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="103.0" pickOnBounds="true"
+                                           preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/ShoreLineIcon100.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane prefHeight="5.0" prefWidth="306.0" styleClass="loginTopBar">
+                            <effect>
+                                <DropShadow blurType="GAUSSIAN" color="#00000059" height="4.98" offsetY="1.0"
+                                            radius="1.995" width="5.0"/>
+                            </effect>
+                        </Pane>
+                        <Pane layoutY="105.0" prefHeight="5.0" prefWidth="306.0" styleClass="loginBottomBar">
+                            <effect>
+                                <DropShadow blurType="GAUSSIAN" color="#00000059" height="5.0" offsetY="-1.0"
+                                            radius="2.0" width="5.0"/>
+                            </effect>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="30.0" prefWidth="306.0" style="-fx-background-color: #FFFFFF;"
+                            AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Pane fx:id="pane" prefHeight="30.0" prefWidth="216.0">
+                            <children>
+                                <Label layoutX="29.0" prefHeight="29.0" prefWidth="187.0"
+                                       text="ShoreLine Converter - Login" textFill="#000000">
+                                    <font>
+                                        <Font name="Segoe UI" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="8.0" layoutY="6.0"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/ShoreLineIcon16.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="261.0" onMouseClicked="#closeWindow" onMouseEntered="#switchCloseWhite"
+                              onMouseExited="#switchCloseBlack" prefHeight="29.0" prefWidth="45.0"
+                              styleClass="paneCloseButton">
+                            <children>
+                                <ImageView fx:id="closeBtn" fitHeight="16.0" fitWidth="16.0" layoutX="14.0"
+                                           layoutY="6.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../Images/ic_close_black_16dp_1x.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="216.0" onMouseClicked="#minimizeWindow" prefHeight="29.0" prefWidth="45.0"
+                              styleClass="paneButton">
+                            <children>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="13.0" layoutY="7.0"
+                                           pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../Images/win10-minimize_btn.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                    </children>
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" color="#00000080" height="5.0" radius="2.0" width="5.0"/>
+                    </effect>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

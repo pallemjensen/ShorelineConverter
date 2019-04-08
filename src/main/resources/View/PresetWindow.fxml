@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<StackPane xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.141"
+           fx:controller="Controller.PresetWindowController">
+    <children>
+        <AnchorPane prefHeight="930.0" prefWidth="560.0" stylesheets="@CSSWhiteTheme.css">
+            <children>
+                <AnchorPane layoutY="30.0" prefHeight="900.0" prefWidth="560.0"
+                            style="-fx-background-color: GHOSTWHITE;">
+                    <children>
+                        <Label alignment="CENTER" layoutY="15.0" prefWidth="560.0"
+                               text="Customize the configuration here on how the data should be converted using this preset later.&#10;(The structure and content of the JSON output file)"
+                               textAlignment="CENTER">
+                            <font>
+                                <Font name="Arial Bold Italic" size="12.0"/>
+                            </font>
+                        </Label>
+                        <VBox alignment="TOP_CENTER" layoutY="55.0" prefHeight="490.0" prefWidth="560.0" spacing="5.0">
+                            <children>
+                                <Separator layoutX="10.0" layoutY="41.0" prefWidth="560.0" valignment="BOTTOM"/>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="siteName:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbSiteName" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbSiteNameD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="assetSerialNumber:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbAssetSerialNumber" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbAssetSerialNumberD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="42.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="type:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbType" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbTypeD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="82.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="externalWorkOrderId:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbExternalWorkOrderId" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbExternalWorkOrderIdD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="137.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="systemStatus:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbSystemStatus" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbSystemStatusD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="185.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="userStatus:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbUserStatus" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbUserStatusD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="233.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="createdOn:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbCreatedOn" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbCreatedOnD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="281.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="createdBy:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbCreatedBy" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbCreatedByD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="329.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="name:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbName" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbNameD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="377.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="priority:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbPriority" disable="true" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbPriorityD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field" text="LOW">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="425.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="status:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbStatus" disable="true" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbStatusD" prefHeight="30.0" prefWidth="150.0"
+                                                              styleClass="preset-text-field" text="NEW">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="473.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="latestFinishDate:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbLatestFinishDate" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbLatestFinishDateD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="521.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="earliestStartDate:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbEarliestStartDate" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbEarliestStartDateD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="569.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="latestStartDate:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbLatestStartDate" prefHeight="30.0"
+                                                             prefWidth="150.0" promptText="..."
+                                                             styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbLatestStartDateD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="617.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                                <BorderPane prefHeight="30.0" prefWidth="560.0">
+                                    <left>
+                                        <Label prefHeight="30.0" prefWidth="150.0" text="estimatedTime:"
+                                               BorderPane.alignment="CENTER">
+                                            <padding>
+                                                <Insets left="5.0"/>
+                                            </padding>
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                    </left>
+                                    <right>
+                                        <HBox spacing="15.0" BorderPane.alignment="CENTER">
+                                            <children>
+                                                <JFXComboBox fx:id="cbEstimatedTime" prefHeight="30.0" prefWidth="150.0"
+                                                             promptText="..." styleClass="preset-combo-box"/>
+                                                <JFXTextField fx:id="cbEstimatedTimeD" prefHeight="30.0"
+                                                              prefWidth="150.0" styleClass="preset-text-field">
+                                                    <HBox.margin>
+                                                        <Insets right="5.0"/>
+                                                    </HBox.margin>
+                                                    <font>
+                                                        <Font name="Arial" size="14.0"/>
+                                                    </font>
+                                                </JFXTextField>
+                                            </children>
+                                        </HBox>
+                                    </right>
+                                </BorderPane>
+                                <Separator layoutX="10.0" layoutY="665.0" prefWidth="560.0" valignment="BOTTOM">
+                                    <padding>
+                                        <Insets top="10.0"/>
+                                    </padding>
+                                </Separator>
+                            </children>
+                        </VBox>
+                        <Label alignment="BOTTOM_CENTER" layoutY="785.0" prefWidth="560.0"
+                               text="Choose a name for the preset">
+                            <font>
+                                <Font name="Arial Bold" size="18.0"/>
+                            </font>
+                        </Label>
+                        <JFXTextField fx:id="txtPresetName" alignment="CENTER" layoutX="153.0" layoutY="815.0"
+                                      prefWidth="254.0" promptText="Write name for preset here...."
+                                      styleClass="preset-text-field">
+                            <font>
+                                <Font name="Arial" size="14.0"/>
+                            </font>
+                        </JFXTextField>
+                        <JFXButton layoutY="865.0" onAction="#createNewPreset" prefHeight="35.0" prefWidth="560.0"
+                                   style="-fx-border-radius: 0;" text="Save preset">
+                            <font>
+                                <Font name="Arial Bold" size="14.0"/>
+                            </font>
+                        </JFXButton>
+                        <Pane prefHeight="5.0" prefWidth="560.0" styleClass="loginTopBar">
+                            <effect>
+                                <DropShadow blurType="GAUSSIAN" color="#00000059" height="4.98" offsetY="1.0"
+                                            radius="1.995" width="5.0"/>
+                            </effect>
+                        </Pane>
+                    </children>
+                </AnchorPane>
+                <AnchorPane prefHeight="30.0" prefWidth="560.0" style="-fx-background-color: #FFFFFF;">
+                    <children>
+                        <Pane fx:id="pane" prefHeight="30.0" prefWidth="470.0">
+                            <children>
+                                <Label layoutX="29.0" prefHeight="29.0" prefWidth="225.0"
+                                       text="ShoreLine Converter - Preset Configurator" textFill="#000000">
+                                    <font>
+                                        <Font name="Segoe UI" size="12.0"/>
+                                    </font>
+                                </Label>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="8.0" layoutY="6.0"
+                                           pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../Images/ShoreLineIcon16.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="515.0" onMouseClicked="#closeWindow" onMouseEntered="#switchCloseWhite"
+                              onMouseExited="#switchCloseBlack" prefHeight="29.0" prefWidth="45.0"
+                              styleClass="paneCloseButton">
+                            <children>
+                                <ImageView fx:id="closeBtn" fitHeight="16.0" fitWidth="16.0" layoutX="14.0"
+                                           layoutY="6.0" pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../Images/ic_close_black_16dp_1x.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                        <Pane layoutX="470.0" onMouseClicked="#minimizeWindow" prefHeight="29.0" prefWidth="45.0"
+                              styleClass="paneButton">
+                            <children>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" layoutX="13.0" layoutY="7.0"
+                                           pickOnBounds="true">
+                                    <image>
+                                        <Image url="@../Images/win10-minimize_btn.png"/>
+                                    </image>
+                                </ImageView>
+                            </children>
+                        </Pane>
+                    </children>
+                    <effect>
+                        <DropShadow blurType="GAUSSIAN" color="#00000080" height="5.0" radius="2.0" width="5.0"/>
+                    </effect>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+    </children>
+</StackPane>

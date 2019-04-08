@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import de.jensd.fx.glyphs.fontawesome.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="900.0"
+            style="-fx-background-color: GHOSTWHITE;" stylesheets="@CSSWhiteTheme.css"
+            xmlns="http://javafx.com/javafx/8.0.141" fx:controller="Controller.MainWindowController">
+    <children>
+        <Pane layoutY="50.0" prefHeight="550.0" prefWidth="900.0" styleClass="mainBackground"
+              AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="50.0"/>
+        <Pane layoutY="95.0" prefHeight="460.0" prefWidth="900.0" style="-fx-background-color: GHOSTWHITE;"
+              AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+              AnchorPane.topAnchor="95.0"/>
+        <JFXTabPane fx:id="mainTPane" layoutY="5.0" prefHeight="595.0" prefWidth="900.0" rotateGraphic="true"
+                    tabClosingPolicy="UNAVAILABLE" tabMaxHeight="45.0" tabMaxWidth="150.0" tabMinHeight="45.0"
+                    tabMinWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                    AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+            <tabs>
+                <Tab id="homeTab" fx:id="homeTab" closable="false">
+                    <content>
+                        <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <JFXButton layoutX="35.0" layoutY="365.0" onAction="#convertUsingPreset"
+                                           prefHeight="50.0" prefWidth="250.0" text="Convert using selected preset"
+                                           AnchorPane.bottomAnchor="135.0" AnchorPane.leftAnchor="35.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXListView fx:id="lvQueue" layoutX="615.0" layoutY="90.0" prefHeight="385.0"
+                                             prefWidth="250.0" styleClass="lvQueue" AnchorPane.bottomAnchor="75.0"
+                                             AnchorPane.leftAnchor="615.0" AnchorPane.rightAnchor="35.0"
+                                             AnchorPane.topAnchor="90.0"/>
+                                <JFXButton fx:id="pauseConversionBtn" disable="true" layoutX="35.0" layoutY="425.0"
+                                           onAction="#startPauseConversion" prefHeight="50.0" prefWidth="250.0"
+                                           text="Pause" AnchorPane.bottomAnchor="75.0" AnchorPane.leftAnchor="35.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <Label fx:id="lblQueueStatus" alignment="CENTER" contentDisplay="CENTER" layoutX="35.0"
+                                       layoutY="315.0" prefHeight="50.0" prefWidth="250.0" text="x"
+                                       AnchorPane.bottomAnchor="185.0" AnchorPane.leftAnchor="35.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <Label alignment="CENTER" layoutX="615.0" layoutY="65.0" prefWidth="250.0"
+                                       text="Conversion queue" AnchorPane.leftAnchor="615.0"
+                                       AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="65.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="16.0"/>
+                                    </font>
+                                </Label>
+                                <JFXButton fx:id="addDragAndDropFiles" alignment="CENTER" contentDisplay="TOP"
+                                           focusTraversable="false" graphicTextGap="10.0" layoutX="35.0" layoutY="90.0"
+                                           onAction="#loadQueueFiles" prefHeight="200.0" prefWidth="250.0"
+                                           ripplerFill="#0c8ab8" styleClass="addDragAndDropButton"
+                                           text="Drop file(s) here&#10;or&#10;Click to select file(s)"
+                                           textAlignment="CENTER" AnchorPane.bottomAnchor="260.0"
+                                           AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="90.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="14.0"/>
+                                    </font>
+                                    <graphic>
+                                        <FontAwesomeIconView fx:id="dragAndDropIcon" fill="#bebebe" glyphName="PLUS"
+                                                             size="55"/>
+                                    </graphic>
+                                </JFXButton>
+                                <JFXListView fx:id="lvPresetsHome" layoutX="325.0" layoutY="90.0" prefHeight="385.0"
+                                             prefWidth="250.0" styleClass="lvPresets" AnchorPane.bottomAnchor="75.0"
+                                             AnchorPane.leftAnchor="325.0" AnchorPane.topAnchor="90.0"/>
+                                <Label alignment="CENTER" layoutX="325.0" layoutY="65.0" prefWidth="250.0"
+                                       text="Choose preset" AnchorPane.topAnchor="65.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="presetsTab" closable="false" text="Presets">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <JFXButton defaultButton="true" layoutX="75.0" layoutY="262.0" onAction="#loadFile"
+                                           prefHeight="50.0" prefWidth="300.0" text="Choose inputfile"
+                                           AnchorPane.bottomAnchor="238.0" AnchorPane.leftAnchor="75.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <JFXButton layoutX="75.0" layoutY="336.0" onAction="#openConfigWindow" prefHeight="50.0"
+                                           prefWidth="300.0" text="Make new preset from inputfile"
+                                           AnchorPane.bottomAnchor="164.0" AnchorPane.leftAnchor="75.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </JFXButton>
+                                <Label fx:id="lblInputFileStatus" alignment="CENTER" layoutX="75.0" layoutY="125.0"
+                                       prefHeight="50.0" prefWidth="300.0" text="NO INPUT FILE LOADED"
+                                       AnchorPane.bottomAnchor="375.0" AnchorPane.leftAnchor="75.0"
+                                       AnchorPane.topAnchor="125.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0"/>
+                                    </font>
+                                </Label>
+                                <JFXListView fx:id="lvPresets" layoutX="475.0" layoutY="125.0" prefHeight="300.0"
+                                             prefWidth="350.0" styleClass="lvPresets" AnchorPane.bottomAnchor="125.0"
+                                             AnchorPane.leftAnchor="475.0" AnchorPane.rightAnchor="75.0"
+                                             AnchorPane.topAnchor="125.0"/>
+                                <Label alignment="CENTER" layoutX="475.0" layoutY="100.0" prefWidth="350.0"
+                                       text="Your presets" AnchorPane.leftAnchor="475.0" AnchorPane.rightAnchor="75.0"
+                                       AnchorPane.topAnchor="100.0">
+                                    <font>
+                                        <Font name="Arial Bold" size="16.0"/>
+                                    </font>
+                                </Label>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab fx:id="logTab" closable="false" text="Logs">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="550.0" prefWidth="900.0">
+                            <children>
+                                <JFXButton layoutX="25.0" layoutY="375.0" onAction="#btnShowLog" prefHeight="50.0"
+                                           prefWidth="200.0" text="Show Log" AnchorPane.bottomAnchor="125.0"
+                                           AnchorPane.leftAnchor="25.0">
+                                    <font>
+                                        <Font name="Arial" size="14.0" />
+                                    </font>
+                                </JFXButton>
+                                <JFXListView fx:id="lvLog" layoutX="250.0" layoutY="50.0" prefHeight="450.0"
+                                             prefWidth="650.0" showTooltip="true" styleClass="lvLog"
+                                             AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="250.0"
+                                             AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0"/>
+                                <VBox alignment="CENTER" layoutY="50.0" prefHeight="300.0" prefWidth="250.0"
+                                      spacing="25.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.topAnchor="50.0">
+                                    <children>
+                                        <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0"
+                                               prefWidth="250.0" text="Start Date:">
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                            <opaqueInsets>
+                                                <Insets/>
+                                            </opaqueInsets>
+                                        </Label>
+                                        <JFXDatePicker fx:id="startDate" defaultColor="#0c8ab8" prefHeight="25.0"
+                                                       prefWidth="175.0"/>
+                                        <Label alignment="CENTER" prefHeight="20.0" prefWidth="250.0" text="End Date:">
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                        <JFXDatePicker fx:id="endDate" defaultColor="#0c8ab8" prefHeight="25.0"
+                                                       prefWidth="175.0"/>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+                <Tab closable="false" text="Settings">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <VBox alignment="CENTER" layoutY="50.0" prefHeight="450.0" prefWidth="900.0"
+                                      spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0"
+                                      AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+                                    <children>
+                                        <Label text="Default save location for JSON files:">
+                                            <font>
+                                                <Font name="Arial Bold" size="18.0"/>
+                                            </font>
+                                        </Label>
+                                        <Label fx:id="txtDefaultSaveLocation" alignment="CENTER" prefHeight="30.0"
+                                               prefWidth="300.0"
+                                               style="-fx-background-color: #E6E6E6; -fx-border-color: #BEBEBE;"
+                                               text="No default save location set..." textAlignment="CENTER">
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                        </Label>
+                                        <JFXButton contentDisplay="TOP" graphicTextGap="5.0"
+                                                   onAction="#chooseDefaultSaveLocation" prefHeight="50.0"
+                                                   prefWidth="300.0" text="Choose a default save location">
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="FOLDER_OPEN" size="20"/>
+                                            </graphic>
+                                        </JFXButton>
+                                        <JFXButton contentDisplay="TOP" defaultButton="true" graphicTextGap="5.0"
+                                                   layoutX="310.0" layoutY="246.0" onAction="#saveSettings"
+                                                   prefHeight="50.0" prefWidth="300.0"
+                                                   text="Save chosen default save location">
+                                            <font>
+                                                <Font name="Arial" size="14.0"/>
+                                            </font>
+                                            <graphic>
+                                                <FontAwesomeIconView fill="WHITE" glyphName="SAVE" size="20"/>
+                                            </graphic>
+                                        </JFXButton>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </JFXTabPane>
+        <Pane layoutY="95.0" prefHeight="5.0" prefWidth="900.0" styleClass="mainMiddleBar" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="95.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="#00000059" height="4.98" offsetY="1.0" radius="1.995"
+                            width="5.0"/>
+            </effect>
+        </Pane>
+        <Pane layoutY="550.0" prefHeight="5.0" prefWidth="900.0" styleClass="mainBottomBar"
+              AnchorPane.bottomAnchor="45.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="#00000059" height="5.0" offsetY="-1.0" radius="2.0" width="5.0"/>
+            </effect>
+        </Pane>
+        <Pane prefHeight="5.0" prefWidth="900.0" styleClass="mainTopBar" AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <effect>
+                <DropShadow blurType="GAUSSIAN" color="#00000026" height="4.995" offsetY="1.0"
+                            radius="1.9987500000000002" width="5.0"/>
+            </effect>
+        </Pane>
+        <JFXButton alignment="CENTER_RIGHT" contentDisplay="GRAPHIC_ONLY" ellipsisString="" focusTraversable="false"
+                   layoutX="755.0" layoutY="5.0" onAction="#logout" prefHeight="45.0" prefWidth="45.0"
+                   styleClass="secondary-button" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="5.0">
+            <font>
+                <Font name="Arial" size="12.0"/>
+            </font>
+            <graphic>
+                <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="SIGN_OUT" size="24"
+                                     textAlignment="CENTER"/>
+            </graphic>
+            <tooltip>
+                <Tooltip autoHide="true" contentDisplay="CENTER" text="Log Out">
+                    <font>
+                        <Font name="Arial" size="12.0"/>
+                    </font>
+                </Tooltip>
+            </tooltip>
+        </JFXButton>
+        <Label alignment="CENTER_RIGHT" layoutX="665.0" layoutY="6.0" prefHeight="20.0" prefWidth="85.0"
+               text="Logged in as" textFill="#ffffffbf" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="6.0">
+            <font>
+                <Font name="Arial" size="14.0"/>
+            </font>
+        </Label>
+        <Label fx:id="userLoggedInLbl" alignment="CENTER_RIGHT" layoutX="400.0" layoutY="25.0" prefHeight="20.0"
+               prefWidth="350.0" text="Username" textFill="WHITE" AnchorPane.rightAnchor="50.0"
+               AnchorPane.topAnchor="25.0">
+            <font>
+                <Font name="Arial Bold" size="14.0"/>
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
